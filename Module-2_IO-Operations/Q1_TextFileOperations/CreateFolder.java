@@ -1,20 +1,22 @@
+// Lab Sheet 2 - Q1a
+// Create a folder with name entered at runtime using Scanner
+
 import java.io.*;
 import java.util.Scanner;
 
-/**
- * Q1a: Create a folder with a student name passed at runtime.
- */
 public class CreateFolder {
     public static void main(String arr[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter folder name");
+        System.out.println("Enter folder name");
         String foldername = sc.next();
+
         File f = new File(foldername);
+
         if (f.exists() && f.isDirectory())
-            System.out.println("already exist");
+            System.out.println("Folder already exists");
         else if (f.mkdir() == true)
-            System.out.println("successfully created");
+            System.out.println("Folder successfully created");
         else
-            System.out.println("cannot be created");
+            System.out.println("Cannot be created");
     }
 }
